@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Detail</title>
+    <style>
+        h2{
+                margin-bottom: -24px;
+        }
+        p{
+            color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+<h2>{{ task.title }}:</h2>
+    <br>
+    <br>
+   <p> {{ task.content }}</p>
+
+</body>
+</html>
+{% endblock %}

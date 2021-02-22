@@ -1,0 +1,24 @@
+
+{% load todo_custom_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>
+
+    {% for task in tasks %}
+        {{ task.title|ti }}<br>
+        {% time_duration_tasks task.due_date %}<br><br>
+    {% endfor %}
+
+
+</div>
+
+
+</body>
+</html>
+

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+{% load todo_custom_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tasks</title>
+    <style>
+      button {
+        display: inline-block;
+        background-color: antiquewhite;
+        border-radius: 10px;
+        border: 1px double #cccccc;
+        color: #4f4242;
+        text-align: center;
+        font-size: 15px;
+        padding: 13px;
+        width: 179px;
+
+        cursor: pointer;
+        margin: 2px;
+      }
+      .box_link{
+          color: #4f4242;
+      }
+      .li_link{
+          color: antiquewhite;
+          font-size: 19px;
+
+      }
+    </style>
+</head>
+<body>
+<h1>List of Tasks</h1>
+<ul>
+
+    {% for task in object_list %}
+        <li>
+            <a class='li_link' href={{ task.get_absolute_url }}> {{ task.title |ti }}</a><br>
+            {% time_duration_tasks task.due_date %}<br><br>
+        </li>
+    {% endfor %}
+</ul>
+<button value="Download"><a class='box_link' href="{% url 'task_view' %}">Download Tasks List In Json Format</a></button>
+
+
+</body>
+</html>
+{% endblock %}

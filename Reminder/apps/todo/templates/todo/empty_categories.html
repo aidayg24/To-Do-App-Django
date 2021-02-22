@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+      .li_link{
+          color: antiquewhite;
+          font-size: 19px;
+
+      }
+    </style>
+</head>
+<body>
+<body>
+<h1>Empty Categories</h1>
+<ul>
+    {% for cat  in c %}
+        <li class="li_link">   {{ cat.name }}</li><br>
+    {% endfor %}
+</ul>
+
+</body>
+
+</body>
+</html>
+{% endblock %}

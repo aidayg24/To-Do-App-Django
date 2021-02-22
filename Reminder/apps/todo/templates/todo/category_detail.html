@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+{% load todo_custom_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Category's Tasks</title>
+    <style>
+      .li_link{
+          color: antiquewhite;
+          font-size: 19px;
+      }
+    </style>
+</head>
+<body>
+<h1>List of Tasks</h1>
+<ul>
+    {% for task in  category  %}
+        <li>
+            <a class="li_link" href={{ task.get_absolute_url }}> {{ task.title |ti }}</a>
+        </li>
+    {% endfor %}
+</ul>
+
+
+</body>
+</html>
+{% endblock %}

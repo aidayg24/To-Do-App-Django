@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Todo Home Page{% endblock %}</title>
+
+    <style>
+      button {
+        display: inline-block;
+        background-color: antiquewhite;
+        border-radius: 10px;
+        border: 1px double #cccccc;
+        color: #4f4242;
+        text-align: center;
+        font-size: 15px;
+        padding: 13px;
+        width: 179px;
+
+        cursor: pointer;
+        margin: 2px;
+      }
+      .box_link{
+          color: #4f4242;
+      }
+      .li_link{
+          color: antiquewhite;
+          font-size: 19px;
+
+      }
+    </style>
+</head>
+<body>
+
+<ul>
+    <h1 >Quick Access To:</h1>
+    <li><a class='li_link' href="{% url 'list_of_categories'%}">Categories</a></li>
+    <li><a class='li_link' href="{% url 'list_of_tasks'%}">Tasks</a></li>
+    <li><a class='li_link' href="{% url 'admin:index' %}">Admin panel</a></li>
+    <br>
+
+    <a class='box_link' href="{% url 'add_new_task' %}"><button type="button" >Add new Task</button></a>
+    <a class='box_link' href="{% url 'add_new_category' %}"><button type="button" >Add new Category</button></a>
+</ul>
+
+
+</body>
+</html>
+{% endblock %}
